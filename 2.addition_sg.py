@@ -16,7 +16,7 @@ window = sg.Window('順次構造',layout,grab_anywhere=True)
 #3.ウィンドウの表示
 
 while True:
-    event,values = window.read() #window.read()で読んできたeventとvalueを変数event,valueに代入
+    event,values = window.read() #window.read()で呼んできたeventとvalueを変数event,valueに代入
 
 #3.ウィンドウを閉じる
 
@@ -28,7 +28,7 @@ while True:
             num1 = int(values['-INPUT1-'])
             num2 = int(values['-INPUT2-'])
             result = num1 + num2
-            window['-OUTPUT-'].update(str(result))
+            window['-OUTPUT-'].update(f"{result}です。")
         except ValueError:
             sg.popup_error('無効な入力です。数値を入力してください。')
 
