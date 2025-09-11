@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三項演算子</title>
+</head>
+<body>
+
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+<script>
+    let age = 15;
+    let fee = age < 18 ? "子供料金" : "大人料金";
+    document.getElementById('output1').textContent = `料金は${fee}です。`;
+
+    let number = 7;
+    let result = number % 2 === 0 ? "偶数" : "奇数";
+    document.getElementById('output2').textContent = `被除数は${result}です。`;
+
+    let score = 85;
+    let grade = score >= 90 ? "A" : score >= 70 ? "B" :"C" ;
+    document.getElementById('output3').textContent = `成績は${grade}です。`;
+
+    
+
+
+
+
+</script>    
+</body>
+</html>
