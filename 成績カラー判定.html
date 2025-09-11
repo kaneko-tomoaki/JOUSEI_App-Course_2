@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成績カラー判定</title>
+    <style>
+
+        p{
+            font-size: 2rem;
+        }
+
+        .grade-優 { color: #1e90ff; }
+        .grade-良 { color: #228b22; }
+        .grade-可   { color: #ffa500; }
+        .grade-不可 { color: #ff0000; }
+
+    </style>
+</head>
+<body>
+    <p id="grade">成績は未入力です。</p>
+    <label>
+        点数（0～100）：
+        <input type="number" id="scoreInput" min="0" max="100">
+    </label>
+    <button onclick="
+        const scoreValue = document.getElementById('scoreInput').value;
+        
+        if (scoreValue === '') {
+            document.getElementById('grade').textContent = '成績は未入力です。';
+        
+        } else {
+            
+            const score = Number(scoreValue);//Number(文字列)を数値に変換
+            let grade;
+            let className;
+
+            if (score > 90) {
+                
+                grade = '優'; className = 'grade-優';
+
+            } else if (score >= 70) {
+
+                grade = '良'; className = 'grade-良';
+
+            } else if (score >= 50) {
+
+                grade = '可'; className = 'grade-可';
+
+            } else {
+
+                grade = '不可'; className = 'grade-不可';
+            }
+            
+            document.getElementById('grade').innerHTML = `成績は<span class='${className}'>${grade}</span>です。`;
+        }
+
+    ">判定する</button><!--38~53行目のコードで判定-->
+<script>
+</script>
+    
+</body>
+</html>
